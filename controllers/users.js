@@ -1,8 +1,8 @@
 const User = require('../models/user');
-const NotFound = require('../errors/errors');
+const NotFound = require('../error/errors');
 const {
   ERROR_CODE, NOT_FOUND_CODE, CREATED_CODE, INTERNAL_SERVER_ERROR,
-} = require('../errors/statusCode');
+} = require('../error/statusCode');
 
 module.exports.getUsers = (req, res) => {
   User.find({})

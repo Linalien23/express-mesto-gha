@@ -1,6 +1,5 @@
-const { incorrectDataError, notFoundError } = require('../error')
-
 const Card = require('../models/card.js');
+const NotFound = require('../error/errors');
 
 module.exports.getCards = (req, res) => {
   Card.find({}) // находим все карточки
