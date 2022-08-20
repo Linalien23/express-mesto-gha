@@ -1,5 +1,5 @@
 const Card = require('../models/card.js');
-const NotFound = require('../error/errors');
+const NotFound = require('../error/NotFound');
 
 module.exports.getCards = (req, res) => {
   Card.find({}) // находим все карточки
@@ -10,7 +10,7 @@ module.exports.getCards = (req, res) => {
           'message': 'Переданы некорректные данные при создании карточки.'
         })
       } else {
-        res.status(500).send({ message: 'Произошла ошибка' })
+        res.status(500).send({ message: 'Произошла ошибка на сервере' })
       }
     });
 }
@@ -26,7 +26,7 @@ module.exports.createCard = (req, res) => {
           'message': 'Переданы некорректные данные при создании карточки.'
         })
       } else {
-        res.status(500).send({ message: 'Произошла ошибка' })
+        res.status(500).send({ message: 'Произошла ошибка на сервере.' })
       }
     });
 }
@@ -40,7 +40,7 @@ module.exports.deleteCard = (req, res) => {
           'message': 'Карточка с указанным _id не найдена.'
         })
       } else {
-        res.status(500).send({ message: 'Произошла ошибка' })
+        res.status(500).send({ message: 'Произошла ошибка на сервере.' })
       }
     });
 }
@@ -60,7 +60,7 @@ module.exports.likeCard = (req, res) => {
           'message': 'Передан несуществующий _id карточки.'
         })
       } else {
-        res.status(500).send({ message: 'Произошла ошибка' })
+        res.status(500).send({ message: 'Произошла ошибка на сервере.' })
       }
     });
 }
@@ -80,7 +80,7 @@ module.exports.dislikeCard = (req, res) => {
           'message': 'Передан несуществующий _id карточки.'
         })
       } else {
-        res.status(500).send({ message: 'Произошла ошибка' })
+        res.status(500).send({ message: 'Произошла ошибка на сервере.' })
       }
     });
 }
