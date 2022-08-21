@@ -4,7 +4,8 @@ const bodyParser = require('body-parser');
 const users = require('./routes/users');
 const cardRouter = require('./routes/cards');
 const { NOT_FOUND_CODE } = require('./errors/statusCode');
-const { PORT=3000 } = process.env;
+
+const { PORT = 3000 } = process.env;
 
 const app = express();
 

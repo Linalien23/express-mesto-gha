@@ -19,7 +19,7 @@ const cardSchema = new mongoose.Schema({ // схема карточки
     required: true,
   },
 
-  likes: [{ // список лайкнувших пост пользователей, массив ObjectId, по умолчанию — пустой массив (поле default)
+  likes: [{ // список лайкнувших пост юзеров, массив ObjectId, по умолчанию — пустой массив
     type: mongoose.Schema.Types.ObjectId,
     default: [],
   }],

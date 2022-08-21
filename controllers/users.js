@@ -91,7 +91,7 @@ module.exports.updateAvatar = (req, res) => {
     {
       new: true,
       runValidators: true,
-      upsert: false
+      upsert: false,
     },
   )
     .orFail(() => {

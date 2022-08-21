@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const userSchema = new mongoose.Schema({ // схемма пользователя
-  name: {  // имя пользователя, строка от 2 до 30 символов, обязательное поле
+  name: { // имя пользователя, строка от 2 до 30 символов, обязательное поле
     type: String,
     minlength: 2,
     maxlength: 30,
