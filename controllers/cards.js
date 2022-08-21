@@ -1,5 +1,5 @@
 const Card = require('../models/card');
-const NotFound = require('../error/NotFound');
+const NotFound = require('../errors/NotFound');
 const {
   BAD_REQUEST,
   NOT_FOUND_CODE,
