@@ -11,6 +11,11 @@ const cardSchema = new mongoose.Schema({ // схема карточки
   link: { // ссылка на картинку, строка, обязательно поле
     type: String,
     required: true,
+    validate: {
+      validator(value) {
+        return /https?:\/\/(\w{3}\.)?[1-9a-z\-.]{1,}\w\w(\/[1-90a-z.,_@%&?+=~/-]{1,}\/?)?#?/i.test(value);
+      },
+    },
   },
 
   owner: { // ссылка на модель автора карточки, тип ObjectId, обязательное поле
@@ -21,6 +26,7 @@ const cardSchema = new mongoose.Schema({ // схема карточки
 
   likes: [{ // список лайкнувших пост юзеров, массив ObjectId, по умолчанию — пустой массив
     type: mongoose.Schema.Types.ObjectId,
+    ref: 'user',
     default: [],
   }],
 
