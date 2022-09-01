@@ -15,20 +15,5 @@
     ],
     "no-console": "off",
     "no-unused-vars": "off"
-  },
-  "settings": {
-    "import/resolver": {
-      "node": {
-        "paths": [
-          "src"
-        ],
-        "extensions": [
-          ".js",
-          ".jsx",
-          ".ts",
-          ".tsx"
-        ]
-      }
-    }
   }
 }
