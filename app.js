@@ -7,7 +7,7 @@ const cardRouter = require('./routes/cards');
 const auth = require('./middlewares/auth');
 
 const { PORT = 3000 } = process.env;
-const NotFound = require('./errors/notFound');
+const { NotFound } = require('./errors/notFound');
 const INTERNAL_SERVER_ERROR = require('./errors/statusCode');
 const { login, createUser } = require('./controllers/users');
 
@@ -17,7 +17,7 @@ app.use(bodyParser.json());
 
 mongoose.connect('mongodb://localhost:27017/mestodb', {
   useNewUrlParser: true,
-})
+});
 
 app.post('/signin', celebrate({
   body: Joi.object().keys({
