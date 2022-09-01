@@ -6,7 +6,7 @@ const BadRequest = require('../errors/badRequest');
 const Conflicted = require('../errors/conflicted');
 const {
   CREATED_CODE,
-} = require('../errors/statusCode');
+} = require('../errors/statusCodes');
 
 module.exports.getUsers = (req, res, next) => {
   User.find({})

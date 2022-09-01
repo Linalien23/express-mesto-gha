@@ -8,7 +8,7 @@ const auth = require('./middlewares/auth');
 
 const { PORT = 3000 } = process.env;
 const { NotFound } = require('./errors/notFound');
-const INTERNAL_SERVER_ERROR = require('./errors/statusCode');
+const INTERNAL_SERVER_ERROR = require('./errors/statusCodes');
 const { login, createUser } = require('./controllers/users');
 
 const app = express();
