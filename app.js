@@ -7,7 +7,7 @@ const cardRouter = require('./routes/cards');
 const auth = require('./middlewares/auth');
 
 const { PORT = 3000 } = process.env;
-const { NotFound } = require('./errors/notFound');
+const NotFound = require('./errors/NotFound');
 const INTERNAL_SERVER_ERROR = require('./errors/statusCodes');
 const { login, createUser } = require('./controllers/users');
 
