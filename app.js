@@ -20,6 +20,8 @@ mongoose.connect('mongodb://localhost:27017/mestodb', {
   useNewUrlParser: true,
 });
 
+app.use(requestLogger);
+
 app.post('/signin', celebrate({
   body: Joi.object().keys({
     email: Joi.string().required().email({ tlds: { allow: false } }),
@@ -44,8 +46,11 @@ app.use('*', (req, res, next) => {
   next(new NotFound('Страница не найдена'));
 });
 
-app.use(errors());
+app.use(errorLogger); // подключаем логгер ошибок
 
+app.use(errors()); // обработчик ошибок celebrate
+
+// централизованный обработчик ошибок
 app.use((err, req, res, next) => {
   if (err.statusCode) {
     res.status(err.statusCode).send({ message: err.message });
